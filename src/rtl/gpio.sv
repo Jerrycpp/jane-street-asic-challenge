@@ -21,8 +21,12 @@ module gpio
     output logic clk_route_o,
     output logic clk_route_addr_o
 );
+    logic external_io_en;
+    logic external_io_in;
+    logic external_io_out;
+    assign external_io_in = external_io;
+    assign external_io = (external_io_en) ? external_io_out : 1'bz;
     
-
 
 
 endmodule
